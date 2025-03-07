@@ -1,11 +1,13 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+
+const handlePressBtnIda = () => {
+  console.log('Botão pressionado!');
+}
 
 export default function TabTwoScreen() {
   return (
@@ -22,9 +24,10 @@ export default function TabTwoScreen() {
       </ThemedView>
       <ThemedText>Selecione o sentido</ThemedText>
       <Collapsible title="Rota ida">
-        <ThemedText>
-          Inserir botão para tela de chamada
-        </ThemedText>
+      <TouchableOpacity style={styles.button} onPress={handlePressBtnIda}>
+        <ThemedText style={styles.buttonText}>Clique aqui</ThemedText>
+      </TouchableOpacity>
+
       </Collapsible>
       <Collapsible title="Chegada escola">
         <ThemedText>
@@ -52,12 +55,25 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    bottom: -70,
-    left: -65,
+    height: 178,
+    width: '100%',
     position: 'absolute',
+    resizeMode: 'cover',
   },
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+  },
+  button: {
+    backgroundColor: '#007bff',
+    padding: 10,
+    borderRadius: 5,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    margin: 5,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
   },
 });

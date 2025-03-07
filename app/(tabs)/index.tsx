@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    resizeMode: 'cover',
   },
   stepContainer: {
     gap: 8,
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   },
   Logo: {
     height: 178,
-    width: 400,
+    width: '100%',
     bottom: 0,
     left: 0,
     position: 'absolute',
